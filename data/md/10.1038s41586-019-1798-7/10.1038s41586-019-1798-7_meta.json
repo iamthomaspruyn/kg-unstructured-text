@@ -1,0 +1,236 @@
+{
+    "languages": [
+        "en"
+    ],
+    "filetype": "pdf",
+    "toc": [
+        {
+            "title": "Data-driven design of metal\u2013organic frameworks for wet flue gas CO2 capture ",
+            "level": 0,
+            "is_closed": false,
+            "n_kids": 15,
+            "page_index": 0,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                748.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Online content ",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 3,
+            "view_mode": "XYZ",
+            "view_pos": [
+                305.0,
+                737.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Fig. 1 Computational screening of MOFs for strong CO2 adsorption and selectivity.",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 1,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                268.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Fig. 2 The effects of water on different MOFs with the same adsorbaphore.",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 1,
+            "view_mode": "XYZ",
+            "view_pos": [
+                305.0,
+                482.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Fig. 3 Structural representation and stability of [Al-PMOF] and [Al-PyrMOF].",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 2,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                463.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Fig. 4 CO2 adsorption, 13C cross-polarization MAS NMR and breakthrough experiments for [Al-PMOF] and [Al-PyrMOF].",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 3,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                443.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Extended Data Fig. 1 Hypothetical material generation (1).",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 5,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                131.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Extended Data Fig. 2 Hypothetical material generation (2).",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 6,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                411.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Extended Data Fig. 3 Examples of adsorbaphores.",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 7,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                261.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Extended Data Fig. 4 Frequently found adsorbaphores.",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 8,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                276.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Extended Data Fig. 5 Effect of the adsorbaphore spacer.",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 9,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                465.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Extended Data Fig. 6 Hypothetical MOFs built with the frz topology.",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 10,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                404.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Extended Data Fig. 7 CO2 adsorption capacity of a class of frz-based hypothetical MOFs at 0.",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 11,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                398.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Extended Data Fig. 8 NMR spectra.",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 12,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                210.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Extended Data Table 1 DFT binding energies of gas particles in the adsorbaphore pocket of each MOF synthesized in this work.",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                746.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Extended Data Table 2 DFT optimized cell parameters of hypothetical MOFs.",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 14,
+            "view_mode": "XYZ",
+            "view_pos": [
+                39.0,
+                746.0,
+                0.0
+            ]
+        }
+    ],
+    "pages": 15,
+    "ocr_stats": {
+        "ocr_pages": 10,
+        "ocr_failed": 0,
+        "ocr_success": 10,
+        "ocr_engine": "surya"
+    },
+    "block_stats": {
+        "header_footer": 0,
+        "code": 0,
+        "table": 6,
+        "equations": {
+            "successful_ocr": 0,
+            "unsuccessful_ocr": 0,
+            "equations": 0
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}
