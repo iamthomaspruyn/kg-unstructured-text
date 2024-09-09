@@ -80,7 +80,7 @@ context = '''
 
 ### **Incorrect Classifications to Avoid:**
 - "Dalton Transactions is a journal related to MOFs."
-  - **Incorrect:** `{{}"head": "Dalton Transactions", "head_type": "MOF", "relation": "Has_Linker", "tail": "MOFs", "tail_type": "Linker"}` 
+  - **Incorrect:** `{{"head": "Dalton Transactions", "head_type": "MOF", "relation": "Has_Linker", "tail": "MOFs", "tail_type": "Linker"}}` 
   - **Correct Approach:** Do not classify "Dalton Transactions" as a "MOF" or any other node type.
 '''
 
