@@ -87,26 +87,36 @@ examples = [
 
 
 context = ''' 
-### **Node Types:**
+# Metal-Organic Frameworks (MOF) Knowledge Graph Rules
+You are going to focus on applying MOF knowledge to build a knowledge graph using the guidelines below. 
+Make sure to keep the graph clean from any compound that is explicity related to MOF chemistry such as: CH4, H2, CO2, etc.
+Additionally, do not include single elements as compounds or MOFs or Linkers unless they are metals. Use your chemistry knowledge to determine if an element is a metal.
+Signficant part of your job is to perform named entity co-reference resolution - where the same entity/node has multiple names. Use "Has_Alias" relationship for that.
+
+## **Node Types:**
 - **MOF (Metal-Organic Framework):** Refers to compounds consisting of metal ions or clusters coordinated to organic ligands. No standard naming convention exists, and they may or may not be presented as a chemical formula.
 - **Metal:** A chemical element forming positive ions and involved in the MOF's structure.
-- **Linker:** An organic molecule connecting metal ions or clusters in a MOF.
+- **Linker:** An organic molecule connecting metal ions or clusters in a MOF. Cannot be elements or single atoms. Can be abbreviated names relevant to Metal-Organic Frameworks chemistry.
 
-### **Relationship Types:**
-- **Has_Alias:** Indicates that a MOF has a name that the document refers to it with such as: Complex 1, Cu1, Compound 1, 1a, HKUST-1. These are "Alias".
+Note: A node cannot have multiple types. It can either be "MOF" or "Linker" or "Metal". Use your chemistry knowledge to figure out which type a node should have.
+
+## **Relationship Types:**
+- **Has_Alias:** Indicates that the text refers to the same "MOF" nodes with different names. This requires that both head and tail are of type "MOF".
 - **Has_Metal:** Indicates that a "MOF" contains a specific "Metal".
 - **Has_Linker:** Indicates that a "MOF" contains a specific "Linker".
 
-### **Important Guidelines:**
-1. **Scientific Context:** Interpret terms within the context of chemistry. For example, "Atom" should refer to elements within a MOF, not other uses of the word.
+Only "MOF" type nodes can have "Has_Metal" and "Has_Linker" and "Has_Alias".
+
+## **Important Guidelines:**
+1. **Scientific Context:** Interpret terms within the context of Metal-Organic Framework chemistry. For example, "Atom" should refer to elements within a MOF, not other uses of the word.
 2. **Disambiguation:** If a term could be ambiguous, prefer the scientific interpretation. Ignore non-scientific entities or terms unless directly relevant to MOFs.
 3. **Entity Consistency:** Ensure consistent naming for entities. For example, always use the full name of a MOF or a chemical element even if it appears in a shortened form in the text.
 4. **Domain-Specific Instructions:** Use technical jargon or abbreviations only within the context of chemistry, and classify them correctly.
 5. **Filtering Non-Relevant Content:** Ignore or deprioritize non-scientific text or sections irrelevant to the chemistry-specific nodes and relationships.
 
-Below are a number of examples of text and their extracted entities and relationships.
+## Below are a number of examples of text and their extracted entities and relationships.
 
-Example 1:
+### Example 1:
 - "Herein, we develop a facile carbon coating strategy to prepare CuOx@C with carbon skin through one-pot pyrolysis of a Cu-based metal organic framework HKUST-1 (Cu3(BTC)2, Cu-BTC)."
     -From this text, "Cu3(BTC)2, Cu-BTC" and "HKUST-1" should be identified as as individual nodes with type "MOF". Since these two entities are just different naming conventions,  
     "Cu3(BTC)2, Cu-BTC" should have a "Has_Alias" relationship with "HKUST-1". As well, "Cu" should be identified as a node with "Metal" type, and "Cu3(BTC)2, Cu-BTC" should have a "Has_Metal" relationship with "Cu" because it contains Copper.
@@ -117,7 +127,7 @@ Example 1:
     `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "Has_Metal", "tail": "Cu", "tail_type": "Metal"}}`
     `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "Has_linker", "tail": "BTC", "tail_type": "Linker"}}`
 
-Example 2:
+### Example 2:
 - "Here, three Cu-MOFs with diﬀerent copper(II) site distribution were employed for CO2 electroreduction. The Cu-MOFs [Cu(L)SO 4]·H2O (Cu1), [Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2), and [Cu(L)2(H2O)2](ClO4)2 (Cu3) were achieved by using the same ligand 1,3,5-tris(1-imidazolyl)benzene (L) but different Cu(II) salts."
     -In this text, "[Cu(L)SO 4]·H2O (Cu1)" and "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2)" and "[Cu(L)2(H2O)2](ClO4)2 (Cu3)" should all be identified as individual nodes with type "MOF". Since each refers to a MOF with different naming conventions,
     "[Cu(L)SO 4]·H2O" should have a "Has_Alias" relationship with "Cu1" - Same with "[Cu(L)2(H2O)2](CH3COO)2·H2O" and "[Cu(L)2(H2O)2](ClO4)2". Also, "Cu" or "Copper" should be identified as a node with type "Metal", and
@@ -170,16 +180,17 @@ system_prompt = (
     "Remember, the knowledge graph should be coherent and easily understandable, "
     "so maintaining consistency in entity references is crucial.\n"
     "## 4. Strict Compliance\n"
-    "Adhere to the rules strictly. Non-compliance will result in termination."
+    "Adhere to the rules strictly. Non-compliance will result in termination.\n"
+    f"{context}"
     )
 
 human_string_parts = ( 
         "Based on the following example, extract entities and "
         "relations from the provided text.\n"
-        f"{context}\n"  # Add additional context here as well
-        "Below are a number of examples of text and their extracted "
-        "entities and relationships."
-        #f"\n\n{examples}\n"
+        # f"{context}\n"  # Add additional context here as well
+        # "Below are a number of examples of text and their extracted "
+        # "entities and relationships."
+        # f"\n\n{examples}\n"
         "For the following text, extract entities and relations as "
         "in the provided example."
         "\n\n Text: {input}"
