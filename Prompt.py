@@ -1,62 +1,94 @@
 from langchain_core.prompts import ChatPromptTemplate
 
 examples = [
-    {
-        "text": (
-            "Adam is a software engineer in Microsoft since 2009, "
-            "and last year he got an award as the Best Talent"
-        ),
-        "head": "Adam",
-        "head_type": "Person",
-        "relation": "WORKS_FOR",
-        "tail": "Microsoft",
-        "tail_type": "Company",
-    },
-    {
-        "text": (
-            "Adam is a software engineer in Microsoft since 2009, "
-            "and last year he got an award as the Best Talent"
-        ),
-        "head": "Adam",
-        "head_type": "Person",
-        "relation": "HAS_AWARD",
-        "tail": "Best Talent",
-        "tail_type": "Award",
-    },
-    {
-        "text": (
-            "Microsoft is a tech company that provide "
-            "several products such as Microsoft Word"
-        ),
-        "head": "Microsoft Word",
-        "head_type": "Product",
-        "relation": "PRODUCED_BY",
-        "tail": "Microsoft",
-        "tail_type": "Company",
-    },
-    {
-        "text": "Microsoft Word is a lightweight app that accessible offline",
-        "head": "Microsoft Word",
-        "head_type": "Product",
-        "relation": "HAS_CHARACTERISTIC",
-        "tail": "lightweight app",
-        "tail_type": "Characteristic",
-    },
-    {
-        "text": "Microsoft Word is a lightweight app that accessible offline",
-        "head": "Microsoft Word",
-        "head_type": "Product",
-        "relation": "HAS_CHARACTERISTIC",
-        "tail": "accessible offline",
-        "tail_type": "Characteristic",
-    },
+        {
+            "text": ("Here, three Cu-MOFs with diﬀerent copper(II) site distribution were employed for CO2 electroreduction. The Cu-MOFs [Cu(L)SO 4]·H2O (Cu1), "
+                    "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2), and [Cu(L)2(H2O)2](ClO4)2 (Cu3) were achieved by using the same ligand 1,3,5-tris(1-imidazolyl)benzene (L) but different Cu(II) salts."),
+            "head": "[Cu(L)SO 4]·H2O",
+            "head_type": "MOF",
+            "relation": "Has_Metal",
+            "tail": "copper(II)",
+            "tail_type": "Metal"
+        },
+        {
+            "text": ("Here, three Cu-MOFs with diﬀerent copper(II) site distribution were employed for CO2 electroreduction. The Cu-MOFs [Cu(L)SO 4]·H2O (Cu1), "
+                    "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2), and [Cu(L)2(H2O)2](ClO4)2 (Cu3) were achieved by using the same ligand 1,3,5-tris(1-imidazolyl)benzene (L) but different Cu(II) salts."),
+            "head": "[Cu(L)SO 4]·H2O",
+            "head_type": "MOF",
+            "relation": "Has_Linker",
+            "tail": "1,3,5-tris(1-imidazolyl)benzene",
+            "tail_type": "Linker"
+        },
+        {
+            "text": ("Here, three Cu-MOFs with diﬀerent copper(II) site distribution were employed for CO2 electroreduction. The Cu-MOFs [Cu(L)SO 4]·H2O (Cu1), "
+                    "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2), and [Cu(L)2(H2O)2](ClO4)2 (Cu3) were achieved by using the same ligand 1,3,5-tris(1-imidazolyl)benzene (L) but different Cu(II) salts."),
+            "head": "[Cu(L)SO 4]·H2O",
+            "head_type": "MOF",
+            "relation": "Has_Alias",
+            "tail": "Cu1",
+            "tail_type": "Alias"
+        },
+        {
+            "text": ("Here, three Cu-MOFs with diﬀerent copper(II) site distribution were employed for CO2 electroreduction. The Cu-MOFs [Cu(L)SO 4]·H2O (Cu1), "
+                    "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2), and [Cu(L)2(H2O)2](ClO4)2 (Cu3) were achieved by using the same ligand 1,3,5-tris(1-imidazolyl)benzene (L) but different Cu(II) salts."),
+            "head": "[Cu(L)2(H2O)2](CH3COO)2·H2O",
+            "head_type": "MOF",
+            "relation": "Has_Metal",
+            "tail": "copper(II)",
+            "tail_type": "Metal"
+        },
+        {
+            "text": ("Here, three Cu-MOFs with diﬀerent copper(II) site distribution were employed for CO2 electroreduction. The Cu-MOFs [Cu(L)SO 4]·H2O (Cu1), "
+                    "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2), and [Cu(L)2(H2O)2](ClO4)2 (Cu3) were achieved by using the same ligand 1,3,5-tris(1-imidazolyl)benzene (L) but different Cu(II) salts."),
+            "head": "[Cu(L)2(H2O)2](CH3COO)2·H2O",
+            "head_type": "MOF",
+            "relation": "Has_Linker",
+            "tail": "1,3,5-tris(1-imidazolyl)benzene",
+            "tail_type": "Linker"
+        },
+        {
+            "text": ("Here, three Cu-MOFs with diﬀerent copper(II) site distribution were employed for CO2 electroreduction. The Cu-MOFs [Cu(L)SO 4]·H2O (Cu1), "
+                    "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2), and [Cu(L)2(H2O)2](ClO4)2 (Cu3) were achieved by using the same ligand 1,3,5-tris(1-imidazolyl)benzene (L) but different Cu(II) salts."),
+            "head": "[Cu(L)2(H2O)2](CH3COO)2·H2O",
+            "head_type": "MOF",
+            "relation": "Has_Alias",
+            "tail": "Cu2",
+            "tail_type": "Alias"
+        },
+        {
+            "text": ("Here, three Cu-MOFs with diﬀerent copper(II) site distribution were employed for CO2 electroreduction. The Cu-MOFs [Cu(L)SO 4]·H2O (Cu1), "
+                    "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2), and [Cu(L)2(H2O)2](ClO4)2 (Cu3) were achieved by using the same ligand 1,3,5-tris(1-imidazolyl)benzene (L) but different Cu(II) salts."),
+            "head": "[Cu(L)2(H2O)2](ClO4)2",
+            "head_type": "MOF",
+            "relation": "Has_Metal",
+            "tail": "copper(II)",
+            "tail_type": "Metal"
+        },
+        {
+            "text": ("Here, three Cu-MOFs with diﬀerent copper(II) site distribution were employed for CO2 electroreduction. The Cu-MOFs [Cu(L)SO 4]·H2O (Cu1), "
+                    "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2), and [Cu(L)2(H2O)2](ClO4)2 (Cu3) were achieved by using the same ligand 1,3,5-tris(1-imidazolyl)benzene (L) but different Cu(II) salts."),
+            "head": "[Cu(L)2(H2O)2](ClO4)2",
+            "head_type": "MOF",
+            "relation": "Has_Linker",
+            "tail": "1,3,5-tris(1-imidazolyl)benzene",
+            "tail_type": "Linker"
+        },
+        {
+            "text": ("Here, three Cu-MOFs with diﬀerent copper(II) site distribution were employed for CO2 electroreduction. The Cu-MOFs [Cu(L)SO 4]·H2O (Cu1), "
+                    "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2), and [Cu(L)2(H2O)2](ClO4)2 (Cu3) were achieved by using the same ligand 1,3,5-tris(1-imidazolyl)benzene (L) but different Cu(II) salts."),
+            "head": "[Cu(L)2(H2O)2](ClO4)2",
+            "head_type": "MOF",
+            "relation": "Has_Alias",
+            "tail": "Cu3",
+            "tail_type": "Alias"
+        }
 ]
+
+
 
 context = ''' 
 ### **Node Types:**
-- **MOF (Metal-Organic Framework):** Refers to compounds consisting of metal ions or clusters coordinated to organic ligands.
-- **Bond:** Represents a connection between two atoms within a MOF.
-- **Atom:** The basic unit of a chemical element in a MOF.
+- **MOF (Metal-Organic Framework):** Refers to compounds consisting of metal ions or clusters coordinated to organic ligands. No standard naming convention exists, and they may or may not be presented as a chemical formula.
 - **Metal:** A chemical element forming positive ions and involved in the MOF's structure.
 - **Linker:** An organic molecule connecting metal ions or clusters in a MOF.
 
@@ -71,17 +103,19 @@ context = '''
 3. **Entity Consistency:** Ensure consistent naming for entities. For example, always use the full name of a MOF or a chemical element even if it appears in a shortened form in the text.
 4. **Domain-Specific Instructions:** Use technical jargon or abbreviations only within the context of chemistry, and classify them correctly.
 5. **Filtering Non-Relevant Content:** Ignore or deprioritize non-scientific text or sections irrelevant to the chemistry-specific nodes and relationships.
-6. **Known Misinterpretations:** Do not classify journal names, like "Dalton Transactions," as a scientific entity like "MOF."
 
-### **Examples of Correct Classifications:**
-- "The MOF Zn-BTC has a bond between Zinc (Metal) and Benzene Tricarboxylate (Linker)."
-  - `{{"head": "Zn-BTC", "head_type": "MOF", "relation": "Has_Bond", "tail": "Zinc", "tail_type": "Metal"}}`
-  - `{{"head": "Zn-BTC", "head_type": "MOF", "relation": "Has_Linker", "tail": "Benzene Tricarboxylate", "tail_type": "Linker"}}`
+Below are a number of examples of text and their extracted entities and relationships.
 
-### **Incorrect Classifications to Avoid:**
-- "Dalton Transactions is a journal related to MOFs."
-  - **Incorrect:** `{{"head": "Dalton Transactions", "head_type": "MOF", "relation": "Has_Linker", "tail": "MOFs", "tail_type": "Linker"}}` 
-  - **Correct Approach:** Do not classify "Dalton Transactions" as a "MOF" or any other node type.
+Example 1:
+- "Herein, we develop a facile carbon coating strategy to prepare CuOx@C with carbon skin through one-pot pyrolysis of a Cu-based metal organic framework HKUST-1 (Cu3(BTC)2, Cu-BTC)."
+    -From this text, "Cu3(BTC)2, Cu-BTC" and "HKUST-1" should both be identified as "MOF" node types. Since these two entities are referring to the same MOF under two different naming conventions,  
+    HKUST-1 should have a "has_alias" relationship with Cu3(BTC)2, Cu-BTC. As well, "Cu" should be identified as a metal node type, and should have a "has_metal" relationship with 
+    Cu3(BTC)2, Cu-BTC. BTC should be identified as a "organic linker" node type, and should have a "has_organic_linker" relationship with Cu3(BTC)2, Cu-BTC. Also note that CuOx@C is a MOF-derived material, 
+    not a MOF. Therefore it should be not identified as a MOF or any other type of node. The correct classification of this text is:
+    
+    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_metal", "tail": "Cu", "tail_type": "Metal"}}`
+    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_organic_linker", "tail": "BTC", "tail_type": "Organic_Linker"}}`
+    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_alias", "tail": "HKUST-1", "tail_type": "MOF"}}`
 '''
 
 system_prompt = (
@@ -127,7 +161,7 @@ human_string_parts = (
         f"{context}\n"  # Add additional context here as well
         "Below are a number of examples of text and their extracted "
         "entities and relationships."
-    #    f"{examples}\n"
+        #f"\n\n{examples}\n"
         "For the following text, extract entities and relations as "
         "in the provided example."
         "\n\n Text: {input}"
