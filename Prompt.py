@@ -84,9 +84,32 @@ examples = [
         }
 ]
 
+def format_examples_list(examples):
+    formatted_list = []
+    for i in examples:
+        item_string = f"- \"{i['text']}\"\n\t"+"`{{"
+
+        for key, value in list(i.items())[1:]:
+            item_string += f"\"{key}\": \"{value}\", "
+        
+        item_string = item_string[:-2]
+        item_string += "}}`\n"
+        formatted_list.append(item_string)
+    return "\n".join(formatted_list)
+
+example_with_explanation = """Example 1:
+- "Herein, we develop a facile carbon coating strategy to prepare CuOx@C with carbon skin through one-pot pyrolysis of a Cu-based metal organic framework HKUST-1 (Cu3(BTC)2, Cu-BTC)."
+    -From this text, "Cu3(BTC)2, Cu-BTC" and "HKUST-1" should both be identified as "MOF" node types. Since these two entities are referring to the same MOF under two different naming conventions,  
+    HKUST-1 should have a "has_alias" relationship with Cu3(BTC)2, Cu-BTC. As well, "Cu" should be identified as a metal node type, and should have a "has_metal" relationship with 
+    Cu3(BTC)2, Cu-BTC. BTC should be identified as a "organic linker" node type, and should have a "has_organic_linker" relationship with Cu3(BTC)2, Cu-BTC. Also note that CuOx@C is a MOF-derived material, 
+    not a MOF. Therefore it should be not identified as a MOF or any other type of node. The correct classification of this text is:
+    
+    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_metal", "tail": "Cu", "tail_type": "Metal"}}`
+    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_linker", "tail": "BTC", "tail_type": "Linker"}}`
+    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_alias", "tail": "HKUST-1", "tail_type": "MOF"}}`"""
 
 
-context = ''' 
+context = (''' 
 ### **Node Types:**
 - **MOF (Metal-Organic Framework):** Refers to compounds consisting of metal ions or clusters coordinated to organic ligands. No standard naming convention exists, and they may or may not be presented as a chemical formula.
 - **Metal:** A chemical element forming positive ions and involved in the MOF's structure.
@@ -106,17 +129,8 @@ context = '''
 
 Below are a number of examples of text and their extracted entities and relationships.
 
-Example 1:
-- "Herein, we develop a facile carbon coating strategy to prepare CuOx@C with carbon skin through one-pot pyrolysis of a Cu-based metal organic framework HKUST-1 (Cu3(BTC)2, Cu-BTC)."
-    -From this text, "Cu3(BTC)2, Cu-BTC" and "HKUST-1" should both be identified as "MOF" node types. Since these two entities are referring to the same MOF under two different naming conventions,  
-    HKUST-1 should have a "has_alias" relationship with Cu3(BTC)2, Cu-BTC. As well, "Cu" should be identified as a metal node type, and should have a "has_metal" relationship with 
-    Cu3(BTC)2, Cu-BTC. BTC should be identified as a "organic linker" node type, and should have a "has_organic_linker" relationship with Cu3(BTC)2, Cu-BTC. Also note that CuOx@C is a MOF-derived material, 
-    not a MOF. Therefore it should be not identified as a MOF or any other type of node. The correct classification of this text is:
-    
-    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_metal", "tail": "Cu", "tail_type": "Metal"}}`
-    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_linker", "tail": "BTC", "tail_type": "Linker"}}`
-    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_alias", "tail": "HKUST-1", "tail_type": "MOF"}}`
 '''
+f"{format_examples_list(examples)}")
 
 system_prompt = (
     "# Knowledge Graph Instructions for GPT\n"
@@ -181,3 +195,6 @@ default_prompt = ChatPromptTemplate.from_messages(
         ),
     ]
 )
+
+if __name__  == "__main__":
+    print(format_examples_list(examples))
