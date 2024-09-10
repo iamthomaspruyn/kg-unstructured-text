@@ -116,6 +116,24 @@ Example 1:
     `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_metal", "tail": "Cu", "tail_type": "Metal"}}`
     `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_linker", "tail": "BTC", "tail_type": "Linker"}}`
     `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_alias", "tail": "HKUST-1", "tail_type": "MOF"}}`
+
+Example 2:
+- "Here, three Cu-MOFs with diﬀerent copper(II) site distribution were employed for CO2 electroreduction. The Cu-MOFs [Cu(L)SO 4]·H2O (Cu1), [Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2), and [Cu(L)2(H2O)2](ClO4)2 (Cu3) were achieved by using the same ligand 1,3,5-tris(1-imidazolyl)benzene (L) but different Cu(II) salts."
+    -In this text, "[Cu(L)SO 4]·H2O (Cu1)" and "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2)" and "[Cu(L)2(H2O)2](ClO4)2 (Cu3)" should all be identified as individual nodes with type "MOF". Since each is refers to a MOF with different naming conventions,
+    "[Cu(L)SO 4]·H2O" should have a "Has_Alias" relationship with "Cu1" - Same with "[Cu(L)2(H2O)2](CH3COO)2·H2O" and "[Cu(L)2(H2O)2](ClO4)2". Also, "Cu" or "Copper" should be identified as a node with type "Metal", and
+    Only "MOF" nodes that have that Copper in them should a have a "Has_Metal" relationship with "Cu" or "Copper". Lastly, Because this paragraph mentions the linker or ligand, there should be an individual node "1,3,5-tris(1-imidazolyl)benzene" with type "Linker".
+    Only "MOF" nodes that have that linker/ligand should have a relationship "Has_Linker" with "1,3,5-tris(1-imidazolyl)benzene". Notice that Cu-MOFs is a class of Metal Organic Frameworks and not a specific MOF. Therefore, it doesn't have its own node.
+
+    `{{"head": "[Cu(L)SO 4]·H2O", "head_type": "MOF", "relation": "Has_Metal", "tail": "copper(II)", "tail_type": "Metal"}}`
+    `{{"head": "[Cu(L)SO 4]·H2O", "head_type": "MOF", "relation": "Has_Linker", "tail": "1,3,5-tris(1-imidazolyl)benzene", "tail_type": "Linker"}}`
+    `{{"head": "[Cu(L)SO 4]·H2O", "head_type": "MOF", "relation": "Has_Alias", "tail": "Cu1", "tail_type": "MOF"}}`
+    `{{"head": "[Cu(L)2(H2O)2](CH3COO)2·H2O", "head_type": "MOF", "relation": "Has_Metal", "tail": "copper(II)", "tail_type": "Metal"}}`
+    `{{"head": "[Cu(L)2(H2O)2](CH3COO)2·H2O", "head_type": "MOF", "relation": "Has_Linker", "tail": "1,3,5-tris(1-imidazolyl)benzene", "tail_type": "Linker"}}`
+    `{{"head": "[Cu(L)2(H2O)2](CH3COO)2·H2O", "head_type": "MOF", "relation": "Has_Alias", "tail": "Cu2", "tail_type": "MOF"}}`
+    `{{"head": "[Cu(L)2(H2O)2](ClO4)2", "head_type": "MOF", "relation": "Has_Metal", "tail": "copper(II)", "tail_type": "Metal"}}`
+    `{{"head": "[Cu(L)2(H2O)2](ClO4)2", "head_type": "MOF", "relation": "Has_Linker", "tail": "1,3,5-tris(1-imidazolyl)benzene", "tail_type": "Linker"}}`
+    `{{"head": "[Cu(L)2(H2O)2](ClO4)2", "head_type": "MOF", "relation": "Has_Alias", "tail": "Cu3", "tail_type": "MOF"}}`
+
 '''
 
 system_prompt = (
