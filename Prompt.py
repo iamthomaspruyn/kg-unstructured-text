@@ -93,8 +93,8 @@ context = '''
 - **Linker:** An organic molecule connecting metal ions or clusters in a MOF.
 
 ### **Relationship Types:**
-- **Has_Bond:** Links an "Atom" to another "Atom" via a bond within a MOF.
-- **Has_Atom:** Indicates that a "MOF" contains a specific "Atom".
+- **Has_Alias:** Indicates that a MOF has a name that the document refers to it with such as: Complex 1, Cu1, Compound 1, 1a, HKUST-1. These are "Alias".
+- **Has_Metal:** Indicates that a "MOF" contains a specific "Metal".
 - **Has_Linker:** Indicates that a "MOF" contains a specific "Linker".
 
 ### **Important Guidelines:**
@@ -114,7 +114,7 @@ Example 1:
     not a MOF. Therefore it should be not identified as a MOF or any other type of node. The correct classification of this text is:
     
     `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_metal", "tail": "Cu", "tail_type": "Metal"}}`
-    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_organic_linker", "tail": "BTC", "tail_type": "Organic_Linker"}}`
+    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_linker", "tail": "BTC", "tail_type": "Linker"}}`
     `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_alias", "tail": "HKUST-1", "tail_type": "MOF"}}`
 '''
 
