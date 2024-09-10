@@ -108,18 +108,18 @@ Below are a number of examples of text and their extracted entities and relation
 
 Example 1:
 - "Herein, we develop a facile carbon coating strategy to prepare CuOx@C with carbon skin through one-pot pyrolysis of a Cu-based metal organic framework HKUST-1 (Cu3(BTC)2, Cu-BTC)."
-    -From this text, "Cu3(BTC)2, Cu-BTC" and "HKUST-1" should both be identified as "MOF" node types. Since these two entities are referring to the same MOF under two different naming conventions,  
-    HKUST-1 should have a "has_alias" relationship with Cu3(BTC)2, Cu-BTC. As well, "Cu" should be identified as a metal node type, and should have a "has_metal" relationship with 
-    Cu3(BTC)2, Cu-BTC. BTC should be identified as a "organic linker" node type, and should have a "has_organic_linker" relationship with Cu3(BTC)2, Cu-BTC. Also note that CuOx@C is a MOF-derived material, 
+    -From this text, "Cu3(BTC)2, Cu-BTC" and "HKUST-1" should be identified as as individual nodes with type "MOF". Since these two entities are just different naming conventions,  
+    "Cu3(BTC)2, Cu-BTC" should have a "Has_Alias" relationship with "HKUST-1". As well, "Cu" should be identified as a node with "Metal" type, and "Cu3(BTC)2, Cu-BTC" should have a "Has_Metal" relationship with "Cu" because it contains Copper.
+    "BTC" should be identified as a "Linker" node type, and "Cu3(BTC)2, Cu-BTC" should have a "Has_Linker" relationship with it. Also note that CuOx@C is a MOF-derived material, 
     not a MOF. Therefore it should be not identified as a MOF or any other type of node. The correct classification of this text is:
     
-    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_metal", "tail": "Cu", "tail_type": "Metal"}}`
-    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_linker", "tail": "BTC", "tail_type": "Linker"}}`
-    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "has_alias", "tail": "HKUST-1", "tail_type": "MOF"}}`
+    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "Has_Alias", "tail": "HKUST-1", "tail_type": "MOF"}}`
+    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "Has_Metal", "tail": "Cu", "tail_type": "Metal"}}`
+    `{{"head": "Cu3(BTC)2, Cu-BTC"", "head_type": "MOF", "relation": "Has_linker", "tail": "BTC", "tail_type": "Linker"}}`
 
 Example 2:
 - "Here, three Cu-MOFs with diﬀerent copper(II) site distribution were employed for CO2 electroreduction. The Cu-MOFs [Cu(L)SO 4]·H2O (Cu1), [Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2), and [Cu(L)2(H2O)2](ClO4)2 (Cu3) were achieved by using the same ligand 1,3,5-tris(1-imidazolyl)benzene (L) but different Cu(II) salts."
-    -In this text, "[Cu(L)SO 4]·H2O (Cu1)" and "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2)" and "[Cu(L)2(H2O)2](ClO4)2 (Cu3)" should all be identified as individual nodes with type "MOF". Since each is refers to a MOF with different naming conventions,
+    -In this text, "[Cu(L)SO 4]·H2O (Cu1)" and "[Cu(L)2(H2O)2](CH3COO)2·H2O (Cu2)" and "[Cu(L)2(H2O)2](ClO4)2 (Cu3)" should all be identified as individual nodes with type "MOF". Since each refers to a MOF with different naming conventions,
     "[Cu(L)SO 4]·H2O" should have a "Has_Alias" relationship with "Cu1" - Same with "[Cu(L)2(H2O)2](CH3COO)2·H2O" and "[Cu(L)2(H2O)2](ClO4)2". Also, "Cu" or "Copper" should be identified as a node with type "Metal", and
     Only "MOF" nodes that have that Copper in them should a have a "Has_Metal" relationship with "Cu" or "Copper". Lastly, Because this paragraph mentions the linker or ligand, there should be an individual node "1,3,5-tris(1-imidazolyl)benzene" with type "Linker".
     Only "MOF" nodes that have that linker/ligand should have a relationship "Has_Linker" with "1,3,5-tris(1-imidazolyl)benzene". Notice that Cu-MOFs is a class of Metal Organic Frameworks and not a specific MOF. Therefore, it doesn't have its own node.
