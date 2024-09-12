@@ -9,13 +9,13 @@ import os
 with open(".apikey", 'r') as f:
     os.environ["OPENAI_API_KEY"] = f.read()
 
-os.environ["NEO4J_URI"] = "bolt://172.28.243.230:7687"
+os.environ["NEO4J_URI"] = "bolt://18.212.7.68:7687"
 os.environ["NEO4J_USERNAME"] = "neo4j"
-os.environ["NEO4J_PASSWORD"] = "adminadmin"
+os.environ["NEO4J_PASSWORD"] = "ornaments-navigator-occurrences"
 
 graph = Neo4jGraph(refresh_schema=False)
 
-input_file = "data/md/10.1039c0dt00999g/10.1039c0dt00999g.md"
+input_file = "data\md\c9sc02605c\c9sc02605c.md"
 
 with open(input_file, "r", encoding="utf-8") as f:
     content = f.read()

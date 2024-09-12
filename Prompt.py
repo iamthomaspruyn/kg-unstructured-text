@@ -89,20 +89,28 @@ examples = [
 context = ''' 
 ### **Node Types:**
 - **MOF (Metal-Organic Framework):** Refers to compounds consisting of metal ions or clusters coordinated to organic ligands. No standard naming convention exists, and they may or may not be presented as a chemical formula.
-- **Metal:** A chemical element forming positive ions and involved in the MOF's structure.
-- **Linker:** An organic molecule connecting metal ions or clusters in a MOF.
+- **Metal:** A metal that is part the MOF structure, this may or may not be indicated in the MOF name. Only identify metals if they are contained within a MOF. Other references to metals within a paper can be ignored.
+- **Linker:** An organic molecule connecting metal ions or clusters in a MOF. This may or may not be indicated in the MOF name.
 
 ### **Relationship Types:**
-- **Has_Alias:** Indicates that a MOF has a name that the document refers to it with such as: Complex 1, Cu1, Compound 1, 1a, HKUST-1. These are "Alias".
+- **Has_Alias:** Indicates that two "MOF" type nodes refer to the same MOF, just under a different name. Ex: "MOF-801" may be reffered to as "Complex 1" in a different part of the text. 
 - **Has_Metal:** Indicates that a "MOF" contains a specific "Metal".
 - **Has_Linker:** Indicates that a "MOF" contains a specific "Linker".
 
 ### **Important Guidelines:**
-1. **Scientific Context:** Interpret terms within the context of chemistry. For example, "Atom" should refer to elements within a MOF, not other uses of the word.
-2. **Disambiguation:** If a term could be ambiguous, prefer the scientific interpretation. Ignore non-scientific entities or terms unless directly relevant to MOFs.
-3. **Entity Consistency:** Ensure consistent naming for entities. For example, always use the full name of a MOF or a chemical element even if it appears in a shortened form in the text.
-4. **Domain-Specific Instructions:** Use technical jargon or abbreviations only within the context of chemistry, and classify them correctly.
-5. **Filtering Non-Relevant Content:** Ignore or deprioritize non-scientific text or sections irrelevant to the chemistry-specific nodes and relationships.
+1) No standard naming convention exists for MOFs. It is your job to correctly identify MOF node types in the given text. Here are some examples of how MOFs can be named:
+    i) Based on institution of research group - Ex: "HKUST-1"
+    ii) Based on order of discovery - Ex: "MOF-5"
+    iii) Based on chemical formulas - Ex: "[Zr₆O₄(OH)₄(BDC)₆]"
+
+2) It is your job to identify when the author of the text referring to a previously mentioned MOF under different naming convention. Give a "has_alias" relationship to these MOFs if you believe with certaintity that this is the case.
+    i) Ex: "HKUST-1", "MOF-199" and "[Cu₃(BTC)₂]ₙ" are the same MOF
+    ii) Ex: "[Zr₆O₄(OH)₄(BDC)₆]" and "UiO-66" are the same MOF
+
+3) Note that not all chemical formulas mentioned in the text are MOFs. Some may be precursors used in the synthesis of the MOF. Use your expert chemistry knowledge to correctly identify when a chemical formula is a MOF. Here are some things to look for in the formula to tell if its a MOF:
+    i) Metal ions, typically transition metals like Zinc (Zn), Copper (Cu), Chromium (Cr), Zirconium (Zr), Cobalt (Co), etc.
+    ii) Organic molecules, often carboxylates or imidazolates, that act as linkers between metal ions. Sometimes abbrieviated - Ex: Benzene-1,3,5-tricarboxylate (BTC), Fumarate (FUM), 1,4-Benzenediphosphonate (BDP)
+
 
 Below are a number of examples of text and their extracted entities and relationships.
 
@@ -121,8 +129,10 @@ Example 1:
 system_prompt = (
     "# Knowledge Graph Instructions for GPT\n"
     "## 1. Overview\n"
-    "You are a top-tier algorithm designed for extracting information in structured "
+    "You are a top-tier algorithm with expert chemistry knowledge designed for extracting information in structured "
     "formats to build a knowledge graph.\n"
+    "Your particular field of expertise is in Metal-Organic Frameworks (MOFs)"
+    "and you have expert ability in reading and understanding scientific literature related to MOFs"
     "Try to capture as much information from the text as possible without "
     "sacrificing accuracy. Do not add any information that is not explicitly "
     "mentioned in the text.\n"
