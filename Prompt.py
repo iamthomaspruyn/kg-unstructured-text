@@ -88,14 +88,16 @@ examples = [
 
 context = ''' 
 ### **Node Types:**
-- **MOF (Metal-Organic Framework):** Refers to compounds consisting of metal ions or clusters coordinated to organic ligands. No standard naming convention exists, and they may or may not be presented as a chemical formula.
+- **MOF (Metal-Organic Framework):** Refers to compounds consisting of metal ions or clusters coordinated to organic ligands. MOFs are sometimes reffered to as "Coordination Polymers". No standard naming convention exists, and they may or may not be presented as a chemical formula. Only create nodes for specific MOFs named in the paper! If the paper mentions "Zinc MOFs", do not extract this as a node. But if the paper said "[Zn₄O(BDC)₃]", do extract this as a node.
 - **Metal:** A metal that is part the MOF structure, this may or may not be indicated in the MOF name. Only identify metals if they are contained within a MOF. Other references to metals within a paper can be ignored.
 - **Linker:** An organic molecule connecting metal ions or clusters in a MOF. This may or may not be indicated in the MOF name.
+- **Synthesis:** The text may include information regarding how a MOF was synthesized. If this information exists in the text, create a "Synthesis" node type and store the synthesis procedure in the node "description". If the paper does not include synthesis information, do not create a node.
 
 ### **Relationship Types:**
 - **Has_Alias:** Indicates that two "MOF" type nodes refer to the same MOF, just under a different name. Ex: "MOF-801" may be reffered to as "Complex 1" in a different part of the text. 
-- **Has_Metal:** Indicates that a "MOF" contains a specific "Metal".
-- **Has_Linker:** Indicates that a "MOF" contains a specific "Linker".
+- **Has_Metal:** Indicates that a "MOF" contains a specific "Metal". One MOF can have multiple metals
+- **Has_Linker:** Indicates that a "MOF" contains a specific "Linker". One MOF can have multiple linkers.
+- **Has_Synthesis:** Indicates that the text contains synthesis information about a specific "MOF" node.
 
 ### **Important Guidelines:**
 1) No standard naming convention exists for MOFs. It is your job to correctly identify MOF node types in the given text. Here are some examples of how MOFs can be named:
@@ -106,6 +108,7 @@ context = '''
 2) It is your job to identify when the author of the text referring to a previously mentioned MOF under different naming convention. Give a "has_alias" relationship to these MOFs if you believe with certaintity that this is the case.
     i) Ex: "HKUST-1", "MOF-199" and "[Cu₃(BTC)₂]ₙ" are the same MOF
     ii) Ex: "[Zr₆O₄(OH)₄(BDC)₆]" and "UiO-66" are the same MOF
+    iii) Sometimes, the author will refer to a MOF named earlier by "Compound 1" or "Compound 2" etc. Ex: The text "The MOF [Cu₃(BTC)₂] 1) was synthesized" implies that "[Cu₃(BTC)₂]" and "Compound 1" are the same MOF
 
 3) Note that not all chemical formulas mentioned in the text are MOFs. Some may be precursors used in the synthesis of the MOF. Use your expert chemistry knowledge to correctly identify when a chemical formula is a MOF. Here are some things to look for in the formula to tell if its a MOF:
     i) Metal ions, typically transition metals like Zinc (Zn), Copper (Cu), Chromium (Cr), Zirconium (Zr), Cobalt (Co), etc.
