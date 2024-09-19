@@ -1,0 +1,82 @@
+{
+    "languages": null,
+    "filetype": "pdf",
+    "toc": [
+        {
+            "title": "Chiral metal-organic and supramolecular interpenetrating 3-D frameworks constructed by one angular ligand and 4,4 prime -dipyridine",
+            "level": 0,
+            "is_closed": false,
+            "n_kids": 3,
+            "page_index": 0,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                794.0,
+                596.0,
+                794.0
+            ]
+        },
+        {
+            "title": "Acknowledgements",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 2,
+            "view_mode": "FitR",
+            "view_pos": [
+                29.0,
+                520.0,
+                596.0,
+                520.0
+            ]
+        },
+        {
+            "title": "Supplementary data",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 3,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                794.0,
+                568.0,
+                794.0
+            ]
+        },
+        {
+            "title": "References",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 3,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                794.0,
+                568.0,
+                794.0
+            ]
+        }
+    ],
+    "pages": 4,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0,
+        "ocr_engine": "none"
+    },
+    "block_stats": {
+        "header_footer": 3,
+        "code": 0,
+        "table": 0,
+        "equations": {
+            "successful_ocr": 0,
+            "unsuccessful_ocr": 0,
+            "equations": 0
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}

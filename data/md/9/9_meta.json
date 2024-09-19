@@ -1,0 +1,264 @@
+{
+    "languages": null,
+    "filetype": "pdf",
+    "toc": [
+        {
+            "title": "Synthesis, structures and luminescence of three coordination polymers  constructed from rigid 1,3,5-benzenetricarboxylic acid and flexible  bis(imidazol-1-ylmethyl)-benzene",
+            "level": 0,
+            "is_closed": false,
+            "n_kids": 16,
+            "page_index": 0,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                794.0,
+                596.0,
+                794.0
+            ]
+        },
+        {
+            "title": "Introduction",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 0,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                630.0,
+                568.0,
+                630.0
+            ]
+        },
+        {
+            "title": "Experimental",
+            "level": 1,
+            "is_closed": false,
+            "n_kids": 3,
+            "page_index": 0,
+            "view_mode": "FitR",
+            "view_pos": [
+                19.0,
+                630.0,
+                596.0,
+                630.0
+            ]
+        },
+        {
+            "title": "Materials and methods",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 0,
+            "view_mode": "FitR",
+            "view_pos": [
+                19.0,
+                609.0,
+                596.0,
+                609.0
+            ]
+        },
+        {
+            "title": "Synthesis of the complexes",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 0,
+            "view_mode": "FitR",
+            "view_pos": [
+                19.0,
+                452.0,
+                596.0,
+                452.0
+            ]
+        },
+        {
+            "title": "X-ray crystallography",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 1,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                794.0,
+                578.0,
+                794.0
+            ]
+        },
+        {
+            "title": "Results and discussion",
+            "level": 1,
+            "is_closed": false,
+            "n_kids": 6,
+            "page_index": 1,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                665.0,
+                578.0,
+                665.0
+            ]
+        },
+        {
+            "title": "Description of crystal structures",
+            "level": 2,
+            "is_closed": false,
+            "n_kids": 3,
+            "page_index": 1,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                644.0,
+                578.0,
+                644.0
+            ]
+        },
+        {
+            "title": "[Cd3(BTC)2(m-bix)3]n middot 4nH2O (1)",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 1,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                623.0,
+                578.0,
+                623.0
+            ]
+        },
+        {
+            "title": "{[Cd(HBTC)(H2O)] middot (p-bix)1/2(H2O)2}n (2)",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 3,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                667.0,
+                578.0,
+                667.0
+            ]
+        },
+        {
+            "title": "[Zn3(BTC)2(p-bix)3(H2O)2]n middot 4nH2O (3)",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 3,
+            "view_mode": "FitR",
+            "view_pos": [
+                29.0,
+                729.0,
+                596.0,
+                729.0
+            ]
+        },
+        {
+            "title": "Thermal analysis",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 5,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                677.0,
+                578.0,
+                677.0
+            ]
+        },
+        {
+            "title": "IR and fluorescent spectra",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 5,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                489.0,
+                578.0,
+                489.0
+            ]
+        },
+        {
+            "title": "Conclusions",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 5,
+            "view_mode": "FitR",
+            "view_pos": [
+                29.0,
+                644.0,
+                596.0,
+                644.0
+            ]
+        },
+        {
+            "title": "Acknowledgements",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 5,
+            "view_mode": "FitR",
+            "view_pos": [
+                29.0,
+                474.0,
+                596.0,
+                474.0
+            ]
+        },
+        {
+            "title": "Supplementary data",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 6,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                794.0,
+                568.0,
+                794.0
+            ]
+        },
+        {
+            "title": "References",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 6,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                794.0,
+                568.0,
+                794.0
+            ]
+        }
+    ],
+    "pages": 7,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0,
+        "ocr_engine": "none"
+    },
+    "block_stats": {
+        "header_footer": 6,
+        "code": 0,
+        "table": 2,
+        "equations": {
+            "successful_ocr": 0,
+            "unsuccessful_ocr": 0,
+            "equations": 0
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}

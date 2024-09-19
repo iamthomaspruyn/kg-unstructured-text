@@ -109,6 +109,7 @@ context = '''
     i) Ex: "HKUST-1", "MOF-199" and "[Cu₃(BTC)₂]ₙ" are the same MOF
     ii) Ex: "[Zr₆O₄(OH)₄(BDC)₆]" and "UiO-66" are the same MOF
     iii) Sometimes, the author will refer to a MOF named earlier by "Compound 1" or "Compound 2" etc. Ex: The text "The MOF [Cu₃(BTC)₂] 1) was synthesized" implies that "[Cu₃(BTC)₂]" and "Compound 1" are the same MOF
+    iiii) Do NOT assign a "has_alias" relationship to two "MOFs" just because they both have the word "Compound" or "Complex" in them. Ex: "Complex 1" and "Complex 2" should never have a "has_alias" relationship.
 
 3) Note that not all chemical formulas mentioned in the text are MOFs. Some may be precursors used in the synthesis of the MOF. Use your expert chemistry knowledge to correctly identify when a chemical formula is a MOF. Here are some things to look for in the formula to tell if its a MOF:
     i) Metal ions, typically transition metals like Zinc (Zn), Copper (Cu), Chromium (Cr), Zirconium (Zr), Cobalt (Co), etc.

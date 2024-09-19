@@ -1,0 +1,82 @@
+{
+    "languages": null,
+    "filetype": "pdf",
+    "toc": [
+        {
+            "title": "A new 3D coordination polymer based on 2,6-\u0084dimethylpyridine-\u00843,5-\u0084dicarboxylic acid and 4,4\u2032-\u0084bipyridine mixed ligands",
+            "level": 0,
+            "is_closed": false,
+            "n_kids": 3,
+            "page_index": 0,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                794.0,
+                596.0,
+                794.0
+            ]
+        },
+        {
+            "title": "Acknowledgments",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 2,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                794.0,
+                596.0,
+                794.0
+            ]
+        },
+        {
+            "title": "Appendix A. Supplementary data",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 2,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                333.0,
+                596.0,
+                333.0
+            ]
+        },
+        {
+            "title": "References",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 2,
+            "view_mode": "FitR",
+            "view_pos": [
+                0.0,
+                794.0,
+                596.0,
+                794.0
+            ]
+        }
+    ],
+    "pages": 4,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0,
+        "ocr_engine": "none"
+    },
+    "block_stats": {
+        "header_footer": 3,
+        "code": 0,
+        "table": 0,
+        "equations": {
+            "successful_ocr": 0,
+            "unsuccessful_ocr": 0,
+            "equations": 0
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}
