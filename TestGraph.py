@@ -9,13 +9,15 @@ import os
 with open(".apikey", 'r') as f:
     os.environ["OPENAI_API_KEY"] = f.read()
 
-os.environ["NEO4J_URI"] = "bolt://18.212.7.68:7687"
+# Make sure you download APOC and GDS plugins if using local host
+# Make sure you have opened the graph first on Neo4j Local
+os.environ["NEO4J_URI"] = "bolt://localhost:7687"
 os.environ["NEO4J_USERNAME"] = "neo4j"
-os.environ["NEO4J_PASSWORD"] = "ornaments-navigator-occurrences"
+os.environ["NEO4J_PASSWORD"] = "AI4ChemS"
 
 graph = Neo4jGraph(refresh_schema=False)
 
-input_file = "data\md\c9sc02605c\c9sc02605c.md"
+input_file = "data/md/10/10.md"
 
 with open(input_file, "r", encoding="utf-8") as f:
     content = f.read()
