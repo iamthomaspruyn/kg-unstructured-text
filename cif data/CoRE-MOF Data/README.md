@@ -1,1 +1,1 @@
-Structures (in .cif) can be found here: insert link
+Structures (in .cif) can be found [here](https://drive.google.com/drive/folders/1fSE5FC7gDuOuu67nvxoJZZDLNZdSMm8-?usp=sharing). In the Drive, go to CoRE-MOF Data and download the cif.zip folder alongside the CoRE-MOF properties in the CSV
