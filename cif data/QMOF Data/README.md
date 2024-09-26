@@ -1,1 +1,1 @@
-QMOF (in .cif) structures can be found here: insert link
+QMOF (in .cif) structures can be found [here](https://drive.google.com/drive/folders/1fSE5FC7gDuOuu67nvxoJZZDLNZdSMm8-?usp=sharing). Go to the QMOF Data folder and download relaxed_structures.zip (alongside qmof.csv) for all the .cif files.
