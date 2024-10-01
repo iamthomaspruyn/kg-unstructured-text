@@ -17,7 +17,7 @@ os.environ["NEO4J_PASSWORD"] = "AI4ChemS"
 
 graph = Neo4jGraph(refresh_schema=False)
 
-input_file = "data/md/10/10.md"
+input_file = "data/md/1/1.md"
 
 with open(input_file, "r", encoding="utf-8") as f:
     content = f.read()
@@ -37,5 +37,8 @@ llm_transformer = LLMGraphTransformer(llm=llm,
 
 graph_docs = extract_nodes(docs, llm_transformer, 10)
 
+print(graph_docs)
+print(graph_docs)
+print(type(graph_docs))
 
 graph.add_graph_documents(graph_docs, baseEntityLabel=True, include_source=True)

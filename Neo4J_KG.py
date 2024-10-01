@@ -1,6 +1,7 @@
 from langchain.text_splitter import MarkdownTextSplitter 
 from concurrent.futures import ThreadPoolExecutor
 import re
+from typing import Optional, List
 
 def clean_text(text: str):
     # Delete the pattern [MISSING_PAGE_FAIL:x]
@@ -16,10 +17,10 @@ def clean_text(text: str):
 
     return cleaned_text
 
-def process_file(text: str):
-    splitter = MarkdownTextSplitter(chunk_size = 2000, chunk_overlap = 0)
+def process_file(text: str, metadatas: Optional[dict] = None):
+    splitter = MarkdownTextSplitter(chunk_size=2000, chunk_overlap=0)
+    return splitter.create_documents([text], [metadatas])
 
-    return splitter.create_documents([text])
 
 def extract_nodes(documents, llm, max_workers: int = 1):
     def process_document(doc):
@@ -35,3 +36,4 @@ def extract_nodes(documents, llm, max_workers: int = 1):
             graph_documents.extend(graph_document)
 
     return graph_documents
+
